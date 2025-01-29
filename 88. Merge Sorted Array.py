@@ -7,16 +7,11 @@ class Solution(object):
         :type n: int
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
-        self.nums1 = nums1
-        self.nums2 = nums2
-        self.m = m
-        self.n = n
-        if m!=0 and n>0:
-            nums1[m:] = nums2
-        elif n <=0:
-            nums1[m:] = []
-            nums1
-        elif m == 0:
-            nums1[m:] = []
-            nums1[:m] = nums2
-        nums1.sort()
+        
+        if m==0:
+            for i in range(n):
+                nums1[i] = nums2[i] 
+        else:
+            for i in range(n):
+                nums1[m+i] = nums2[i]
+            nums1.sort()
